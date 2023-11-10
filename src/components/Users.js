@@ -1,12 +1,11 @@
-import { Component } from "react";
+import Button from '@mui/material/Button'
 import User from "./User";
-export default class Users extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.userData.map((user) => <User key={user} user={user} du={this.props.du} />)}
-                <button disabled={!this.props.dl} onClick={this.props.da}>Delete All</button>
-            </div>
-        )
-    }
+export default function Users(props) {
+    return (
+        <div>
+            {props.userData.map((user) => <User key={user} user={user} du={props.du} />)}
+            <Button disabled={!props.dl} onClick={props.da}>Delete All</Button>
+        </div>
+    )
+
 }
